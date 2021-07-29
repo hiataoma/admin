@@ -37,27 +37,27 @@ Vue.use(Router)
  * all roles can be accessed
  */
 export const constantRoutes = [
-//   {
-//     path: '/redirect',
-//     component: Layout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: '/redirect/:path(.*)',
-//         component: () => import('@/views/redirect/index')
-//       }
-//     ]
-//   },
-//   {
-//     path: '/login',
-//     component: () => import('@/views/login/index'),
-//     hidden: true
-//   },
-//   {
-//     path: '/auth-redirect',
-//     component: () => import('@/views/login/auth-redirect'),
-//     hidden: true
-//   },
+  {
+    path: '/redirect',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
+    path: '/auth-redirect',
+    component: () => import('@/views/login/auth-redirect'),
+    hidden: true
+  }
 //   {
 //     path: '/404',
 //     component: () => import('@/views/error-page/404'),
@@ -68,20 +68,20 @@ export const constantRoutes = [
 //     component: () => import('@/views/error-page/401'),
 //     hidden: true
 //   },
-  {
-    path: '/',
-    component: Layout,
-    // redirect: '/dashboard',
-    children: [
-      {
-        path: 'dashboard',
-        // component: () => import('@/views/dashboard/index'),
-        component: () => import(/* webpackChunkName: "about" */ '@/views/Home.vue'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
-      }
-    ]
-  },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   // redirect: '/dashboard',
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       // component: () => import('@/views/dashboard/index'),
+  //       component: () => import(/* webpackChunkName: "about" */ '@/views/Home.vue'),
+  //       name: 'Dashboard',
+  //       meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+  //     }
+  //   ]
+  // }
 //   {
 //     path: '/documentation',
 //     component: Layout,
@@ -121,13 +121,13 @@ export const constantRoutes = [
 //       }
 //     ]
 //   }
-// ]
+]
 
-// /**
-//  * asyncRoutes
-//  * the routes that need to be dynamically loaded based on user roles
-//  */
-// export const asyncRoutes = [
+/**
+ * asyncRoutes
+ * the routes that need to be dynamically loaded based on user roles
+ */
+export const asyncRoutes = [
 //   {
 //     path: '/permission',
 //     component: Layout,
@@ -392,7 +392,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
