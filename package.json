@@ -20,7 +20,8 @@
     "vuex": "^3.4.0",
     "xlsx": "^0.17.0",
     "sass": "1.26.2",
-    "sass-loader": "8.0.2"
+    "sass-loader": "8.0.2",
+    "mockjs": "1.0.1-beta3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
