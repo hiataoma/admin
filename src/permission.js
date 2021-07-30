@@ -1,3 +1,4 @@
+// 实现路由权限控制
 import router from './router'
 import store from './store'
 import { Message } from 'element-ui'
@@ -31,6 +32,7 @@ router.beforeEach(async(to, from, next) => {
       if (hasRoles) {
         next()
       } else {
+        // 获取路由以及权限
         try {
           // get user info
           // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
@@ -55,7 +57,7 @@ router.beforeEach(async(to, from, next) => {
       }
     }
   } else {
-    /* has no token*/
+    // has no token
 
     if (whiteList.indexOf(to.path) !== -1) {
       // in the free login whitelist, go directly

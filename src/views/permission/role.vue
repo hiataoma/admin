@@ -100,6 +100,7 @@ export default {
     async getRoutes() {
       const res = await getRoutes()
       this.serviceRoutes = res.data
+      console.log(res.data)
       this.routes = this.generateRoutes(res.data)
     },
     async getRoles() {
@@ -248,7 +249,7 @@ export default {
 
       // Show parent if there are no child route to display
       if (showingChildren.length === 0) {
-        onlyOneChild = { ... parent, path: '', noShowingChildren: true }
+        onlyOneChild = { ...parent, path: '', noShowingChildren: true }
         return onlyOneChild
       }
 
